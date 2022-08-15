@@ -1,3 +1,4 @@
+//sign jwt token -- payload, expiry time, and token secret.
 const jwt = require("jsonwebtoken");
 
 exports.createJWT = (email, userId, duration) => {
