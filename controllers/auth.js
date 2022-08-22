@@ -10,11 +10,8 @@ const emailRegexp =
 
 //user signup auth
 exports.signup = (req, res, next) => {
-  let { name, email, password, password_confirmation } = req.body;
+  let { email, password } = req.body;
   let errors = [];
-  if (!name) {
-    errors.push({ name: "required" });
-  }
   if (!email) {
     errors.push({ email: "required" });
   }
@@ -23,14 +20,6 @@ exports.signup = (req, res, next) => {
   }
   if (!password) {
     errors.push({ password: "required" });
-  }
-  if (!password_confirmation) {
-    errors.push({
-      password_confirmation: "required",
-    });
-  }
-  if (password != password_confirmation) {
-    errors.push({ password: "mismatch" });
   }
   if (errors.length > 0) {
     return res.status(422).json({ errors: errors });
@@ -48,7 +37,6 @@ exports.signup = (req, res, next) => {
           .json({ errors: [{ user: "email already exists" }] });
       } else {
         const user = new User({
-          name: name,
           email: email,
           password: password,
         });
@@ -91,7 +79,7 @@ exports.signin = (req, res) => {
     errors.push({ email: "invalid email" });
   }
   if (!password) {
-    errors.push({ passowrd: "required" });
+    errors.push({ password: "required" });
   }
   if (errors.length > 0) {
     return res.status(422).json({ errors: errors });
