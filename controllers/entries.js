@@ -1,45 +1,44 @@
-const Entries = require("../models/Entries")
+const NewEntry = require("../models/Entries")
 
 // description: get entry
-// route: GET /travelmoire/entry
+// route: GET /travelmoire/entries
 // access: public
-
 const newEntry = async (req, res) => {
     try {
-        res.json(await Entries.find({}));
+        res.json(await NewEntry.find({}));
     } catch (error) {
         res.status(400).json(error)
     };
 };
 
 // description: set entry
-// route: POST /travelmoire/entry
+// route: POST /travelmoire/entries
 // access: private
 const setEntry = async (req, res) => {
     try {
-        res.json(await Entries.create(req.body));
-    }catch (error) {
+        res.json(await NewEntry.create(req.body));
+    } catch (error) {
         //send error
         res.status(400).json(error);
     };
 };
 
-// description: update task
-// route: UPDATE /travelmoire/entry/:id
+// description: update entry
+// route: UPDATE /travelmoire/entries/:id
 // access: public
 const updateEntry = async (req,res) => {
     try {
-        res.json(await Entries.findByIdAndUpdate(req.params.id, req.body));
+        res.json(await NewEntry.findByIdAndUpdate(req.params.id, req.body));
     } catch (error) {
         res.status(400).json(error);
     }
 };
 // description: delete task
-// route: DELETE /travelmoire/entry/:id
+// route: DELETE /travelmoire/entries/:id
 // access: public
 const deleteEntry = async (req,res) => {
     try {
-        res.json(await Entries.findByIdAndRemove(req.params.id));
+        res.json(await NewEntry.findByIdAndRemove(req.params.id));
     } catch (error) {
         res.status(400).json(error);
     }

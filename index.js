@@ -1,10 +1,12 @@
+// configure app settings
+require("dotenv").config();
+
 // require dependencies
 const express = require("express");
 const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
-require("dotenv").config();
 
 // require routes
 const authRoutes = require("./routes/auth");
@@ -28,9 +30,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api", authRoutes);
 
 // router routes
-app.use("http://localhost:8000/api/signin", authRoutes)
-app.use("http://localhost:8000/api/signup", authRoutes)
-app.use("/travelmoire/entry", require("./routes/entries"))
+app.use("http://localhost:8000/api/signin", authRoutes);
+app.use("http://localhost:8000/api/signup", authRoutes);
+app.use("/travelmoire/entries", require("./routes/entries"));
 
 
 

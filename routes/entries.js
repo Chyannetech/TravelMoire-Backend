@@ -1,10 +1,10 @@
 // dependencies
 const express = require("express");
 const router = express.Router();
-const { newEntry } = require("../controllers/entries")
-const { setEntry } = require("../controllers/entries")
-const { updateEntry } = require("../controllers/entries")
-const { deleteEntry } = require("../controllers/entries")
+const { newEntry } = require("../controllers/entries");
+const { setEntry } = require("../controllers/entries");
+const { updateEntry } = require("../controllers/entries");
+const { deleteEntry } = require("../controllers/entries");
 
 // index and create route 
 router.route("/").get(newEntry).post(setEntry);
