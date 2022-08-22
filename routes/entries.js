@@ -6,7 +6,7 @@ const { setEntry } = require("../controllers/entries");
 const { updateEntry } = require("../controllers/entries");
 const { deleteEntry } = require("../controllers/entries");
 
-// index and create route 
+// index and create route
 router.route("/").get(newEntry).post(setEntry);
 // index route
 //  router.get('/', newEntry);
