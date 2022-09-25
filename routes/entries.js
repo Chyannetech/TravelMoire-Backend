@@ -6,18 +6,14 @@ const { setEntry } = require("../controllers/entries");
 const { updateEntry } = require("../controllers/entries");
 const { deleteEntry } = require("../controllers/entries");
 
-// index and create route
-router.route("/").get(newEntry).post(setEntry);
 // index route
-//  router.get('/', newEntry);
+ router.get('/get-entry', newEntry);
 // create route
-//  router.post('/', setEntry);
-
-// update and delete route
-router.route("/:id").put(updateEntry).delete(deleteEntry);
-// Update Route
-//  router.put('/:id', updateTasks);
-// Delete Route
-//  router.delete('/:id', deleteTasks);
+ router.post('/create-entry', setEntry);
+ 
+// update route
+//  router.put('/update/:id', updateTasks);
+// delete route
+ router.delete('/delete/:id', deleteEntry);
 
 module.exports = router;

@@ -30,6 +30,8 @@ app.use("/api", authRoutes);
 // router routes
 app.use("http://localhost:8000/api/signin", authRoutes);
 app.use("http://localhost:8000/api/signup", authRoutes);
+
+
 app.use("/travelmoire/entries", require("./routes/entries"));
 
 // express listener

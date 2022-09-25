@@ -1,7 +1,7 @@
 const NewEntry = require("../models/Entries");
 
 // description: get entry
-// route: GET /travelmoire/entries
+// route: GET /travelmoire/entries/get-entry
 // access: public
 const newEntry = async (req, res) => {
   try {
@@ -12,7 +12,7 @@ const newEntry = async (req, res) => {
 };
 
 // description: set entry
-// route: POST /travelmoire/entries
+// route: POST /travelmoire/entries/create-entry
 // access: private
 const setEntry = async (req, res) => {
   try {
@@ -24,7 +24,7 @@ const setEntry = async (req, res) => {
 };
 
 // description: update entry
-// route: UPDATE /travelmoire/entries/:id
+// route: UPDATE /travelmoire/entries/update/:id
 // access: public
 const updateEntry = async (req, res) => {
   try {
@@ -34,7 +34,7 @@ const updateEntry = async (req, res) => {
   }
 };
 // description: delete task
-// route: DELETE /travelmoire/entries/:id
+// route: DELETE /travelmoire/entries/delete/:id
 // access: public
 const deleteEntry = async (req, res) => {
   try {
