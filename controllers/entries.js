@@ -24,7 +24,7 @@ const setEntry = async (req, res) => {
 };
 
 // description: update entry
-// route: UPDATE /travelmoire/entries/update/:id
+// route: UPDATE /travelmoire/entries/up:id
 // access: public
 const updateEntry = async (req, res) => {
   try {
