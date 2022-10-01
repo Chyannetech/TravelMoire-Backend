@@ -9,11 +9,12 @@ const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 
 // require routes
-const authRoutes = require("./routes/auth");
-const { db } = require("./models/User");
+// const authRoutes = require("./routes/auth");
+// const { db } = require("./models/User");
 
 // pull PORT from .env to run on port 8000.
 const { PORT = 8000 } = process.env || 8000;
+
 
 //database connection
 connectDB();
@@ -24,12 +25,11 @@ app.use(bodyParser.json());
 app.use(express.json()); // this recreates req.body from JSON when express is not serving HTML
 app.use(express.urlencoded({ extended: false }));
 
-//routes middleware
-app.use("/api", authRoutes);
+
 
 // router routes
-app.use("http://localhost:8000/api/signin", authRoutes);
-app.use("http://localhost:8000/api/signup", authRoutes);
+// app.use("http://localhost:8000/api/signin", authRoutes);
+// app.use("http://localhost:8000/api/signup", authRoutes);
 
 
 app.use("/travelmoire/entries", require("./routes/entries"));
