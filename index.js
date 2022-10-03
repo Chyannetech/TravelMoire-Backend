@@ -23,7 +23,6 @@ app.use(express.json()); // this recreates req.body from JSON when express is no
 app.use(express.urlencoded({ extended: false }));
 
 
-
 app.use("/travelmoire/entries", require("./routes/entries"));
 
 // express listener
